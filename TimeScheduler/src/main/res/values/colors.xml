@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--   <color name="colorPrimary">#0389F0</color>
+       <color name="colorPrimaryDark">#016FB9</color>
+       <color name="colorAccent">#E6Af2E</color> -->
+    <!--   <color name="colorPrimary">#C2095A</color>
+       <color name="colorPrimaryDark">#920743</color> -->
+    <!--    <color name="colorPrimary">#CE8147</color>
+        <color name="colorPrimaryDark">#A15E2B</color> -->
+    <!--    <color name="colorPrimary">#B2BCAA</color> -->
+    <color name="colorPrimary">#BABABA</color>
+    <color name="colorPrimaryDark">#838383</color>
+    <color name="colorFab">@color/colorPrimaryDark</color>
+    <color name="colorAccent">#273940</color>
+    <!--    <color name="colorAccent">#713131</color> -->
+    <!--    <color name="colorAccent">#64403E</color> -->
+    <!--    <color name="colorAccent">#04A797</color> -->
+    <!--    <color name="colorAccent">#FF595E</color> -->
+    <!--    <color name="colorAccent">#E6Af2E</color> -->
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="textColor">#000000</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <!--    <color name="tabsScrollColor">#0E148A</color> -->
+    <color name="tabsScrollColor">#31393C</color>
+    <color name="colorHighlight">#B6B6B6</color>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/add_category"
+        android:text="@string/add_category"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/add_description"
+        android:text="@string/add_description"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_category"
+        android:layout_alignStart="@+id/add_category" />
+
+ <!--   <Spinner
+        android:id="@+id/add_spinnerCategory"
+        android:layout_width="wrap_content"
+        android:entries="@array/spinnerCategories"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/add_category"
+        android:layout_toEndOf="@+id/add_description"
+        android:layout_marginStart="49dp" /> -->
+ <!--   <Spinner
+        android:id="@+id/add_spinnerDecription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/add_description"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp" /> -->
+
+    <EditText
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/add_category"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="35dp"
+        android:id="@+id/add_editCategory"/>
+
+    <EditText
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/add_description"
+        android:layout_alignStart="@id/add_editCategory"
+        android:id="@+id/add_editDescription"
+        android:focusableInTouchMode="false"/>
+<!--
+    <AutoCompleteTextView
+        android:id="@+id/add_editDescription"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/add_description"
+        android:layout_alignStart="@id/add_editCategory"/>
+-->
+</RelativeLayout>
