@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/set_button2_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/set_firstNotiButton"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/set_button2_cat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/set_button2_textView"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/add_category" />
+
+    <TextView
+        android:id="@+id/set_button2_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/set_button2_cat"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/add_description" />
+
+
+    <EditText
+        android:id="@+id/set_edit_category2"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/set_button2_cat"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        android:focusableInTouchMode="false" />
+
+    <EditText
+        android:id="@+id/set_edit_description2"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/set_button2_desc"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp" />
+
+    <Button
+        android:id="@+id/set_button_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/set_edit_description2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/set_button_button"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorBackground"/>
+
+</RelativeLayout>

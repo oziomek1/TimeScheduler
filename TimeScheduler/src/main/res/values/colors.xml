@@ -10,7 +10,7 @@
     <!--    <color name="colorPrimary">#B2BCAA</color> -->
     <color name="colorPrimary">#BABABA</color>
     <color name="colorPrimaryDark">#838383</color>
-    <color name="colorFab">@color/colorPrimaryDark</color>
+    <color name="colorFab">#99001c</color>
     <color name="colorAccent">#273940</color>
     <!--    <color name="colorAccent">#713131</color> -->
     <!--    <color name="colorAccent">#64403E</color> -->
