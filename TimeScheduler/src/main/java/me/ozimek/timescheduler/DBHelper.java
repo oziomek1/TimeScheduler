@@ -47,7 +47,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + ACTIV_TABLE_NAME + " ("
+        db.execSQL("create table if not exists " + ACTIV_TABLE_NAME + " ("
                 + ACTIV_ID + " integer primary key autoincrement, "
                 + ACTIV_DATE + " text, "
                 + ACTIV_TIME + " text, "
@@ -55,16 +55,16 @@ public class DBHelper extends SQLiteOpenHelper {
                 + ACTIV_SUBCATEGORY + " text, "
                 + ACTIV_DESCRIPTION + " text"
                 + ")");
-        db.execSQL("create table " + CAT_TABLE_NAME + " ("
+        db.execSQL("create table if not exists "  + CAT_TABLE_NAME + " ("
                 + CAT_ID + " integer primary key autoincrement, "
                 + CAT_CATEGORY + " text"
                 + ")");
-        db.execSQL("create table " + SUBCAT_TABLE_NAME + " ("
+        db.execSQL("create table if not exists " + SUBCAT_TABLE_NAME + " ("
                 + SUBCAT_ID + " integer primary key autoincrement, "
                 + SUBCAT_CATEGORY + " text, "
                 + SUBCAT_SUBCATEGORY + " text"
                 + ")");
-        db.execSQL("create table " + DESC_TABLE_NAME + " ("
+        db.execSQL("create table if not exists " + DESC_TABLE_NAME + " ("
                 + DESC_ID + " integer primary key autoincrement, "
                 + DESC_DESCRIPTION + "text"
                 + ")");

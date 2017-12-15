@@ -135,4 +135,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="cat_prompt_Category">Add new category</string>
     <string name="cat_prompt_SubCategory">Add new subcategory</string>
+    <string name="set_notification">Enable notification bar</string>
+    <string name="set_firstNotiButton">Set first button</string>
+    <string name="set_secondNotiButton">Set second button</string>
+    <string name="set_button_button">Set</string>
 </resources>

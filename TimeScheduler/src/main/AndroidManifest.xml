@@ -27,10 +27,23 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/MyAddTheme" />
         <activity
+            android:name=".SettingsActivity"
+            android:label="@string/settings_name"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/MyAddTheme" />
+        <activity
             android:name=".StatsActivity"
             android:label="@string/stats_name"
             android:parentActivityName=".MainActivity"
             android:theme="@style/MyAddTheme" />
+        <activity
+            android:name=".NotificationView"
+            android:label="Label of notification"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,18 +1,26 @@
+/**
+ * Created by wojtek on 2017-08-06.
+ */
+
 package me.ozimek.timescheduler;
 
 
 import android.app.DatePickerDialog;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ContentValues;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.NotificationCompat;
 import android.widget.DatePicker;
 import android.content.Context;
 
@@ -30,7 +38,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 import me.ozimek.timescheduler.tabs.SlidingTabLayout;
@@ -54,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     String[] tabText = {"HOME", "CATEGORIES", "STATS"};
     private Context context;
     int[] icons = {R.drawable.home, R.drawable.category, R.drawable.stats};
+    int numMessage = 0;
 
     private ActionBarDrawerToggle drawerToggle;
 
@@ -140,9 +148,9 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         intent = new Intent(MainActivity.this, CategoryActivity.class);
                         break;
-                    /*case 2:
+                    case 2:
                         intent = new Intent(MainActivity.this, StatsActivity.class);
-                        break; */
+                        break;
                     default:
                         intent = new Intent(MainActivity.this, AddActivity.class);
                         break;
@@ -151,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        addNotificationBar();
     }
 
     @Override
@@ -206,13 +215,14 @@ public class MainActivity extends AppCompatActivity {
     private void selectDrawerItem(MenuItem item) {
     //    Fragment fragment = null;
     //    Class fragmentClass;
+        Intent intent;
         switch (item.getItemId()) {
             case R.id.navDrawer_home:
                 navItemIndex = 0;
                 break;
             case R.id.navDrawer_categories:
                 navItemIndex = 1;
-                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                intent = new Intent(MainActivity.this, CategoryActivity.class);
                 startActivity(intent);
                 break;
             case R.id.navDrawer_history:
@@ -222,6 +232,8 @@ public class MainActivity extends AppCompatActivity {
                 navItemIndex = 4;
                 break;
             case R.id.navDrawer_settings:
+                intent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
                 navItemIndex = 5;
                 break;
             case R.id.navDrawer_export_import:
@@ -259,6 +271,30 @@ public class MainActivity extends AppCompatActivity {
                 navItemIndex = 0;
         }
         drawerLayout.closeDrawers();
+    }
+
+    private void addNotificationBar() {
+
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        android.support.v4.app.NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.ic_notify)
+                .setContentTitle("Time Scheduler")
+                .setContentText("Add your activities!")
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
+                .setColor(ContextCompat.getColor(this, R.color.colorFab))
+                .addAction(R.drawable.notif_first, "First", contentIntent)
+                .addAction(R.drawable.notif_second, "Second", contentIntent)
+                .addAction(R.drawable.notif_last, "Last", contentIntent);
+               // .setNumber(++numMessage);
+
+   //     NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
+
+        nBuilder.setContentIntent(contentIntent);
+
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.notify(0, nBuilder.build());
     }
 
     void createEssentialCategories() {
@@ -305,7 +341,6 @@ public class MainActivity extends AppCompatActivity {
         new AddToSubCatTask().execute(addFirst(Social,Category[6]));
         new AddToSubCatTask().execute(addFirst(Duty,Category[7]));
     }
-    static ArrayList<String> arrayOfCategoriesAndSubcategories = new ArrayList<>();
 
     public String[] addFirst(String [] arr, String s) {
         String[] temp = new String[arr.length + 1];
