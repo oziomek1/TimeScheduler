@@ -12,7 +12,7 @@ The main feature of this app is the navigation bar which allows you to customize
 There is also a button which allows you to post your previous activity, interrupted by another one
 
 <img src="https://raw.githubusercontent.com/oziomek1/TimeScheduler/master/screenshot/1.png" width="40%">
-<img src="https://raw.githubusercontent.com/oziomek1/TimeScheduler/master/screenshot/1.png" width="40%">
-<img src="https://raw.githubusercontent.com/oziomek1/TimeScheduler/master/screenshot/1.png" width="40%">
-<img src="https://raw.githubusercontent.com/oziomek1/TimeScheduler/master/screenshot/1.png" width="40%">
-<img src="https://raw.githubusercontent.com/oziomek1/TimeScheduler/master/screenshot/1.png" width="40%">
+<img src="https://raw.githubusercontent.com/oziomek1/TimeScheduler/master/screenshot/2.png" width="40%">
+<img src="https://raw.githubusercontent.com/oziomek1/TimeScheduler/master/screenshot/3.png" width="40%">
+<img src="https://raw.githubusercontent.com/oziomek1/TimeScheduler/master/screenshot/4.png" width="40%">
+<img src="https://raw.githubusercontent.com/oziomek1/TimeScheduler/master/screenshot/5.png" width="40%">
